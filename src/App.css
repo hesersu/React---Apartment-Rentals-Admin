@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 0px;
   text-align: center;
-  background: plum;
 }
 
 body {
@@ -15,12 +14,25 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #faf7f7;
+  padding: 10px;
 }
 
 .logoImage {
   width: 100px;
 }
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 10px 5px;
+}
+ul li {
+  font-size: 22px;
+  padding: 10px 0px;
+}
 
 .footer {
-  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-color: #faf7f7;
 }
