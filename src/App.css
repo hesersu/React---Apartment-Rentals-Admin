@@ -30,7 +30,16 @@ ul li {
   font-size: 22px;
   padding: 10px 0px;
 }
-
+.card-container {
+  width: 50%;
+  border: 2px solid blue;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.card-container img {
+  width: 300px;
+}
 .footer {
   position: absolute;
   bottom: 0;
