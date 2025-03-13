@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const List = ({ listCard, handleDelete }) => {
   return (
@@ -10,6 +11,9 @@ const List = ({ listCard, handleDelete }) => {
       <p>{listCard.name} </p>
       <p>{listCard.description} </p>
       <p>{listCard.neighbourhood} </p>
+      <button>
+        <Link to={`/details/${listCard.id}`}>View Details</Link>
+      </button>
       <button>
         {listCard.instant_bookable ? "Book instantly" : "Not Instant"}
       </button>
