@@ -14,13 +14,44 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #faf7f7;
+  border-bottom: 1px solid #c8b8dc;
+  box-shadow: 4px 0px 6px 1px #ae9cc6;
   padding: 10px;
+}
+.nav h3 {
+  color: #9a4ff8;
+  text-transform: uppercase;
+  padding-right: 30px;
+  font-weight: 900;
 }
 
 .logoImage {
   width: 100px;
 }
+.app-container {
+  display: flex;
+}
+.side {
+  /* background: #7a39cb; */
+  width: 250px;
+}
+/* .link-styles {
+  color: white;
+} */
+.sidebar {
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 50px;
+}
+
 ul {
   list-style: none;
   text-align: left;
@@ -30,15 +61,50 @@ ul li {
   font-size: 22px;
   padding: 10px 0px;
 }
-.card-container {
-  width: 50%;
-  border: 2px solid blue;
-  margin-bottom: 20px;
-  border-radius: 20px;
+.card-container,
+.details {
+  border: 1px solid white;
+  box-shadow: 2px 1px 8px 3px #d1d1d1;
+  margin: 20px auto;
+  width: 80%;
   padding: 20px;
 }
 .card-container img {
   width: 300px;
+}
+.card-container button,
+.details button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #fff;
+  border: 2px solid #9a4ff8;
+  font-size: 20px;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #74b197;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+}
+form label {
+  margin: 10px;
+  font-size: 22px;
+}
+form input,
+select {
+  width: 300px;
+  height: 25px;
+  margin-left: 20px;
+}
+form button {
+  background-color: #74b197;
+  font-size: 20px;
+  border: 1px solid white;
+  padding: 12px;
+  border-radius: 8px;
 }
 .footer {
   position: absolute;

@@ -7,18 +7,25 @@ import { Route, Routes } from "react-router-dom";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import CreateForm from "./components/CreateForm";
+import Edit from "./components/Edit";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Listings />} />
-        <Route path="/details/:listId" element={<ItemDetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className="app-container">
+        <Sidebar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Listings />} />
+            <Route path="/details/:listId" element={<ItemDetailsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/:listId/edit" element={<Edit />} />
+          </Routes>
+        </div>
+      </div>
       <Footer />
     </>
   );

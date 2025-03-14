@@ -1,6 +1,7 @@
 import { useState } from "react";
 import listingsData from "../assets/listings.json";
 import ListCard from "./ListCard";
+import CreateForm from "./CreateForm";
 
 const Listings = () => {
   const [listResults, setListResults] = useState(listingsData.results);
@@ -14,6 +15,8 @@ const Listings = () => {
 
   return (
     <div>
+      <CreateForm allListings={listResults} setListResults={setListResults} />
+
       {listResults.map((element) => (
         <ListCard
           key={element.id}

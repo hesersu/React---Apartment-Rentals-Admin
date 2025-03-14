@@ -1,6 +1,7 @@
 import React from "react";
 import listingsData from "../assets/listings.json";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemDetailsPage = () => {
   const { listId } = useParams();
@@ -10,18 +11,17 @@ const ItemDetailsPage = () => {
   );
 
   return (
-    <div>
+    <div className="details">
       <p>{listDetails.id} </p>
       <p>{listDetails.name} </p>
-      <p>{listDetails.description} </p>s<p>{listDetails.neighbourhood} </p>
+      <p>{listDetails.picture_url}</p>
+      <p>{listDetails.description} </p>
+      <p>{listDetails.neighbourhood} </p>
+      <Link to={`/${listId}/edit`}>
+        <button className="edit">Edit</button>
+      </Link>
     </div>
   );
 };
 
 export default ItemDetailsPage;
-
-// const { studentId } = useParams();
-// const studentProfile = studentsData.find(
-//   (student) => student._id === studentId
-// );
-// console.log("here in the details page", studentId);
