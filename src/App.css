@@ -14,14 +14,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid #c8b8dc;
-  box-shadow: 4px 0px 6px 1px #ae9cc6;
+  border-bottom: 2px solid #c8b8dc;
+  /* box-shadow: 4px 0px 6px 1px #ae9cc6; */
   padding: 10px;
 }
 .nav h3 {
   color: #9a4ff8;
   text-transform: uppercase;
-  padding-right: 30px;
   font-weight: 900;
 }
 
@@ -32,12 +31,15 @@ body {
   display: flex;
 }
 .side {
-  /* background: #7a39cb; */
+  background: #eae1d8;
   width: 250px;
 }
-/* .link-styles {
-  color: white;
-} */
+.link-styles {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  font-size: 26px;
+}
 .sidebar {
   color: white;
   padding: 20px;
@@ -46,10 +48,9 @@ body {
   top: 0;
   bottom: 0;
 }
-
 .main-content {
   flex: 1;
-  padding-top: 50px;
+  background: #fffaf5;
 }
 
 ul {
@@ -66,38 +67,49 @@ ul li {
   border: 1px solid white;
   box-shadow: 2px 1px 8px 3px #d1d1d1;
   margin: 20px auto;
-  width: 80%;
+  width: 60%;
   padding: 20px;
 }
 .card-container img {
-  width: 300px;
+  width: 350px;
 }
 .card-container button,
 .details button {
   padding: 10px;
   margin: 10px;
   background-color: #fff;
-  border: 2px solid #9a4ff8;
+  border: 2px solid #74b197;
   font-size: 20px;
   border-radius: 5px;
 }
 form {
   display: flex;
   flex-direction: column;
-  border: 2px solid #74b197;
-  padding: 20px;
-  margin: 20px auto;
-  width: 80%;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid #74b197; */
+  padding: 50px 20px;
+  margin-bottom: 20px;
+  background-image: url("./images/44.webp");
+  background-size: cover;
+  height: 50vh;
 }
 form label {
   margin: 10px;
   font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
-form input,
-select {
-  width: 300px;
-  height: 25px;
-  margin-left: 20px;
+form input {
+  width: 500px;
+  line-height: 35px;
+  border: 1px solid white;
+}
+form select {
+  width: 500px;
+  height: 40px;
+  padding: 7px 0px;
+  border: 1px solid white;
 }
 form button {
   background-color: #74b197;
@@ -105,9 +117,11 @@ form button {
   border: 1px solid white;
   padding: 12px;
   border-radius: 8px;
+  margin-top: 30px;
+  width: 30%;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  background-color: #faf7f7;
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid #c8b8dc;
 }

@@ -24,61 +24,51 @@ const CreateForm = (props) => {
 
   return (
     <form onSubmit={handleCreateApartment}>
-      <label>
-        Apartment Name:
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(event) => {
-            setDescription(event.target.value);
-          }}
-        />
-      </label>
-      <label>
-        Neighbourhood:
-        <select
-          onChange={(e) => {
-            setNeighbourhood(e.target.value);
-          }}
-        >
-          <option value="Madrid, Spain">Madrid, Spain</option>
-          <option value="Paris, France">Paris, France</option>
-          <option value="Milan, Italy">Milan, Itay</option>
-        </select>
-      </label>
-      <label>
-        Picture:
-        <input
-          type="text"
-          placeholder="Picture"
-          value={pictureUrl}
-          onChange={(event) => {
-            setPictureUrl(event.target.value);
-          }}
-        />
-      </label>
-      <label>
-        Instant Bookable:
-        <input
-          type="checkbox"
-          value={instantBookable}
-          onChange={(event) => {
-            setInstantBookable(event.target.checked);
-          }}
-        />
-      </label>
+      <label>Apartment Name:</label>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
+      <label>Description: </label>
+      <input
+        type="text"
+        placeholder="Description"
+        value={description}
+        onChange={(event) => {
+          setDescription(event.target.value);
+        }}
+      />
+      <label>Neighbourhood: </label>
+      <select
+        onChange={(e) => {
+          setNeighbourhood(e.target.value);
+        }}
+      >
+        <option value="Madrid, Spain">Madrid, Spain</option>
+        <option value="Paris, France">Paris, France</option>
+        <option value="Milan, Italy">Milan, Itay</option>
+      </select>
+      <label>Picture: </label>
+      <input
+        type="text"
+        placeholder="Picture"
+        value={pictureUrl}
+        onChange={(event) => {
+          setPictureUrl(event.target.value);
+        }}
+      />
+      <label>Instant Bookable: </label>
+      <input
+        type="checkbox"
+        value={instantBookable}
+        onChange={(event) => {
+          setInstantBookable(event.target.checked);
+        }}
+      />
       <button>Create</button>
     </form>
   );

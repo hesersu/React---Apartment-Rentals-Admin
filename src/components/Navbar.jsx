@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="nav">
       <img src={logoImage} alt="logo" className="logoImage" />
-      <h3>Apartment Rental</h3>
+      <h3>Kris Apartment Rental</h3>
     </div>
   );
 };
