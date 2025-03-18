@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0px;
   text-align: center;
@@ -14,12 +14,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 2px solid #c8b8dc;
+  border-bottom: 2px solid #0060b5;
   /* box-shadow: 4px 0px 6px 1px #ae9cc6; */
   padding: 10px;
 }
 .nav h3 {
-  color: #9a4ff8;
+  color: #0060b5;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -31,7 +31,7 @@ body {
   display: flex;
 }
 .side {
-  background: #eae1d8;
+  background: #fffaf5;
   width: 250px;
 }
 .link-styles {
@@ -39,6 +39,7 @@ body {
   justify-content: center;
   padding-top: 50px;
   font-size: 26px;
+  color: #0060b5;
 }
 .sidebar {
   color: white;
@@ -50,7 +51,6 @@ body {
 }
 .main-content {
   flex: 1;
-  background: #fffaf5;
 }
 
 ul {
@@ -67,9 +67,17 @@ ul li {
   border: 1px solid white;
   box-shadow: 2px 1px 8px 3px #d1d1d1;
   margin: 20px auto;
-  width: 60%;
+  /* width: 60%; */
   padding: 20px;
 }
+
+/* .card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 20px;
+} */
+
 .card-container img {
   width: 350px;
 }
@@ -78,7 +86,7 @@ ul li {
   padding: 10px;
   margin: 10px;
   background-color: #fff;
-  border: 2px solid #74b197;
+  border: 2px solid #0060b5;
   font-size: 20px;
   border-radius: 5px;
 }
@@ -117,7 +125,7 @@ form select {
   border: 1px solid white;
 }
 form button {
-  background-color: #74b197;
+  background-color: #0060b5;
   font-size: 20px;
   border: 1px solid white;
   padding: 12px;
@@ -125,8 +133,37 @@ form button {
   margin-top: 30px;
   width: 30%;
 }
+.about-us {
+  background-color: #0060b5;
+  padding: 50px;
+  color: white;
+  margin: 0px;
+}
+.new-perspectives {
+  background-color: #1a171b;
+  color: white;
+  display: flex;
+}
+.new-perspectives img {
+  width: 400px;
+}
+.about-us h2 {
+  margin: 0px;
+  padding: 50px;
+  font-size: 50px;
+}
+.new-perspectives h3 {
+  margin: 0px;
+  padding: 50px;
+  font-size: 50px;
+}
+.about-us p,
+.new-perspectives p {
+  font-size: 30px;
+  padding-bottom: 50px;
+}
 .footer {
   text-align: center;
   padding: 10px;
-  border-top: 2px solid #c8b8dc;
+  border-top: 2px solid #0060b5;
 }
