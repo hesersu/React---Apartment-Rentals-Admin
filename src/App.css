@@ -82,6 +82,11 @@ ul li {
   font-size: 20px;
   border-radius: 5px;
 }
+
+.details img {
+  width: 300px;
+}
+
 form {
   display: flex;
   flex-direction: column;

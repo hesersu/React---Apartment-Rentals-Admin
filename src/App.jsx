@@ -9,8 +9,11 @@ import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import CreateForm from "./components/CreateForm";
 import Edit from "./components/Edit";
+import { useState } from "react";
+import listingsData from "./assets/listings.json";
 
 function App() {
+  const [listResults, setListResults] = useState(listingsData.results);
   return (
     <>
       <Navbar />
@@ -18,11 +21,29 @@ function App() {
         <Sidebar />
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Listings />} />
-            <Route path="/details/:listId" element={<ItemDetailsPage />} />
+            <Route
+              path="/"
+              element={
+                <Listings listings={listResults} setListings={setListResults} />
+              }
+            />
+            <Route
+              path="/details/:listId"
+              element={
+                <ItemDetailsPage
+                  listings={listResults}
+                  setListings={setListResults}
+                />
+              }
+            />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />
-            <Route path="/:listId/edit" element={<Edit />} />
+            <Route
+              path="/:listId/edit"
+              element={
+                <Edit listings={listResults} setListings={setListResults} />
+              }
+            />
           </Routes>
         </div>
       </div>

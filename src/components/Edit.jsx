@@ -1,33 +1,54 @@
-import React, { useState } from "react";
-import listingsData from "../assets/listings.json";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Edit = (props) => {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [neighbourhood, setNeighbourhood] = useState("");
-  const [pictureUrl, setPictureUrl] = useState("");
-  const [instantBookable, setInstantBookable] = useState(false);
+  const [picture_url, setPictureUrl] = useState("");
+  const [instant_bookable, setInstantBookable] = useState(false);
 
   const { listId } = useParams();
-  const editApartment = listingsData.results.find((oneList) => {
-    if (oneList.id === Number(listId)) {
-      return true;
-    }
-  });
-  console.log(editApartment);
+
+  const nav = useNavigate();
+
+  useEffect(() => {
+    const editApartment = props.listings.find((oneList) => {
+      if (oneList.id == listId) {
+        return true;
+      }
+    });
+    setId(editApartment.id);
+    setName(editApartment.name);
+    setDescription(editApartment.description);
+    setNeighbourhood(editApartment.neighbourhood);
+    setPictureUrl(editApartment.picture_url);
+    setInstantBookable(editApartment.instant_bookable);
+  }, []);
+
   function handleEditApartment(event) {
     event.preventDefault();
 
-    const newApartment = {
+    const updatedApartment = {
       id,
       name,
       description,
       neighbourhood,
-      pictureUrl,
+      picture_url,
     };
-    props.setListResults([newApartment, ...props.allListings]);
+    // props.setListings([updatedApartment, ...props.listings]);
+
+    const updatedArrayOfApartments = props.listings.map((oneApartment) => {
+      if (oneApartment.id === id) {
+        return updatedApartment;
+      } else {
+        return oneApartment;
+      }
+    });
+    props.setListings(updatedArrayOfApartments);
+    //after we successfully set the new array of pets
+    nav("/");
   }
 
   return (
@@ -37,7 +58,7 @@ const Edit = (props) => {
         <input
           type="text"
           placeholder="Name"
-          value={editApartment.name}
+          value={name}
           onChange={(event) => {
             setName(event.target.value);
           }}
@@ -48,7 +69,7 @@ const Edit = (props) => {
         <input
           type="text"
           placeholder="Description"
-          value={editApartment.description}
+          value={description}
           onChange={(event) => {
             setDescription(event.target.value);
           }}
@@ -71,7 +92,7 @@ const Edit = (props) => {
         <input
           type="text"
           placeholder="Picture"
-          value={editApartment.picture_url}
+          value={picture_url}
           onChange={(event) => {
             setPictureUrl(event.target.value);
           }}
@@ -81,7 +102,7 @@ const Edit = (props) => {
         Instant Bookable:
         <input
           type="checkbox"
-          value={editApartment.instant_bookable}
+          value={instant_bookable}
           onChange={(event) => {
             setInstantBookable(event.target.checked);
           }}

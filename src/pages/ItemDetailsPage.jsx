@@ -1,20 +1,21 @@
 import React from "react";
-import listingsData from "../assets/listings.json";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const ItemDetailsPage = () => {
+const ItemDetailsPage = (props) => {
   const { listId } = useParams();
 
-  const listDetails = listingsData.results.find(
-    (oneListing) => oneListing.id === Number(listId)
+  const listDetails = props.listings.find(
+    (oneListing) => oneListing.id == listId
   );
 
   return (
     <div className="details">
+      <p>
+        <img src={listDetails.picture_url} alt="" />
+      </p>
       <p>{listDetails.id} </p>
       <p>{listDetails.name} </p>
-      <p>{listDetails.picture_url}</p>
       <p>{listDetails.description} </p>
       <p>{listDetails.neighbourhood} </p>
       <Link to={`/${listId}/edit`}>

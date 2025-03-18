@@ -3,21 +3,22 @@ import listingsData from "../assets/listings.json";
 import ListCard from "./ListCard";
 import CreateForm from "./CreateForm";
 
-const Listings = () => {
-  const [listResults, setListResults] = useState(listingsData.results);
-
+const Listings = (props) => {
   function handleDelete(id) {
-    const filteredElements = listResults.filter(
+    const filteredElements = props.listings.filter(
       (oneElement) => oneElement.id !== id
     );
-    setListResults(filteredElements);
+    props.setListings(filteredElements);
   }
 
   return (
     <div>
-      <CreateForm allListings={listResults} setListResults={setListResults} />
+      <CreateForm
+        allListings={props.listings}
+        setListResults={props.setListings}
+      />
 
-      {listResults.map((element) => (
+      {props.listings.map((element) => (
         <ListCard
           key={element.id}
           listCard={element}

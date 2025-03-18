@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import listingsData from "../assets/listings.json";
+import { v4 as uuidv4 } from "uuid";
 
 const CreateForm = (props) => {
-  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [neighbourhood, setNeighbourhood] = useState("");
-  const [pictureUrl, setPictureUrl] = useState("");
-  const [instantBookable, setInstantBookable] = useState(false);
+  const [picture_url, setPictureUrl] = useState("");
+  const [instant_bookable, setInstantBookable] = useState(false);
 
   function handleCreateApartment(event) {
     event.preventDefault();
 
+    const newId = uuidv4();
+
     const newApartment = {
-      id,
+      id: newId,
       name,
       description,
       neighbourhood,
-      pictureUrl,
+      picture_url,
+      instant_bookable,
     };
     props.setListResults([newApartment, ...props.allListings]);
   }
@@ -56,7 +58,7 @@ const CreateForm = (props) => {
       <input
         type="text"
         placeholder="Picture"
-        value={pictureUrl}
+        value={picture_url}
         onChange={(event) => {
           setPictureUrl(event.target.value);
         }}
@@ -64,7 +66,7 @@ const CreateForm = (props) => {
       <label>Instant Bookable: </label>
       <input
         type="checkbox"
-        value={instantBookable}
+        value={instant_bookable}
         onChange={(event) => {
           setInstantBookable(event.target.checked);
         }}
