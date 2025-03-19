@@ -15,7 +15,7 @@ const ItemDetailsPage = (props) => {
         <img src={listDetails.picture_url} alt="" />
       </p>
       <p>{listDetails.id} </p>
-      <p>{listDetails.name} </p>
+      <h3>{listDetails.name} </h3>
       <p>{listDetails.description} </p>
       <p>{listDetails.neighbourhood} </p>
       <Link to={`/${listId}/edit`}>

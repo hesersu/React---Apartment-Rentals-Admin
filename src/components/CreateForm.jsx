@@ -50,6 +50,7 @@ const CreateForm = (props) => {
           setNeighbourhood(e.target.value);
         }}
       >
+        <option value="choose">Choose your neighbourhood</option>
         <option value="Madrid, Spain">Madrid, Spain</option>
         <option value="Paris, France">Paris, France</option>
         <option value="Milan, Italy">Milan, Itay</option>

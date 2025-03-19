@@ -10,6 +10,7 @@ const Sidebar = () => {
       <Link className={"link-styles"} to="/about">
         About
       </Link>
+      <h3 className="quote">Home is where the heart is</h3>
     </div>
   );
 };

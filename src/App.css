@@ -4,11 +4,16 @@
   padding: 0px;
   text-align: center;
 }
-
 body {
   padding: 0;
   margin: 0;
   color: black;
+  font-family: "Josefin Sans", sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: "Bree Serif", sans-serif;
 }
 .nav {
   display: flex;
@@ -27,12 +32,22 @@ body {
 .logoImage {
   width: 100px;
 }
+.sidebarImage {
+  width: 250px;
+  margin-top: 50px;
+}
+.quote {
+  font-size: 40px;
+  padding: 40px 0px;
+  color: #0060b4;
+}
 .app-container {
   display: flex;
 }
 .side {
-  background: #fffaf5;
+  background: #fafafb;
   width: 250px;
+  /* height: 736px; */
 }
 .link-styles {
   display: flex;
@@ -67,16 +82,9 @@ ul li {
   border: 1px solid white;
   box-shadow: 2px 1px 8px 3px #d1d1d1;
   margin: 20px auto;
-  /* width: 60%; */
+  width: 80%;
   padding: 20px;
 }
-
-/* .card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 20px;
-} */
 
 .card-container img {
   width: 350px;
@@ -85,8 +93,9 @@ ul li {
 .details button {
   padding: 10px;
   margin: 10px;
-  background-color: #fff;
-  border: 2px solid #0060b5;
+  background-color: #0060b5;
+  color: white;
+  border: none;
   font-size: 20px;
   border-radius: 5px;
 }
@@ -94,7 +103,9 @@ ul li {
 .details img {
   width: 300px;
 }
-
+.description {
+  padding: 20px 70px;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -103,12 +114,12 @@ form {
   /* border: 2px solid #74b197; */
   padding: 50px 20px;
   margin-bottom: 20px;
-  background-image: url("./images/44.webp");
+  background-image: url("./images/bg-img.jpg");
   background-size: cover;
   height: 50vh;
 }
 form label {
-  margin: 10px;
+  margin: 15px;
   font-size: 22px;
   font-weight: 800;
   text-transform: uppercase;
@@ -126,8 +137,10 @@ form select {
 }
 form button {
   background-color: #0060b5;
+  color: white;
+  text-transform: uppercase;
   font-size: 20px;
-  border: 1px solid white;
+  border: none;
   padding: 12px;
   border-radius: 8px;
   margin-top: 30px;
@@ -142,10 +155,9 @@ form button {
 .new-perspectives {
   background-color: #1a171b;
   color: white;
-  display: flex;
 }
 .new-perspectives img {
-  width: 400px;
+  width: 300px;
 }
 .about-us h2 {
   margin: 0px;
@@ -161,6 +173,15 @@ form button {
 .new-perspectives p {
   font-size: 30px;
   padding-bottom: 50px;
+}
+.card-container .bookable {
+  background-color: #1a171b;
+  color: white;
+  border: none;
+}
+.link-detail {
+  color: white;
+  text-decoration: none;
 }
 .footer {
   text-align: center;

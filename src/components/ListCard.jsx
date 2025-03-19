@@ -7,15 +7,17 @@ const List = ({ listCard, handleDelete }) => {
       <p>
         <img src={listCard.picture_url} alt={listCard.name} />
       </p>
+      <button className="bookable">
+        {listCard.instant_bookable ? "Book instantly" : "Not Instant"}
+      </button>
       <p>{listCard.id} </p>
-      <p>{listCard.name} </p>
-      <p>{listCard.description} </p>
+      <h3>{listCard.name} </h3>
+      <p className="description">{listCard.description} </p>
       <p>{listCard.neighbourhood} </p>
       <button>
-        <Link to={`/details/${listCard.id}`}>View Details</Link>
-      </button>
-      <button>
-        {listCard.instant_bookable ? "Book instantly" : "Not Instant"}
+        <Link className={"link-detail"} to={`/details/${listCard.id}`}>
+          View Details
+        </Link>
       </button>
       <button className="delete" onClick={() => handleDelete(listCard.id)}>
         Delete
